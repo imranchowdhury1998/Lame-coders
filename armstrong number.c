@@ -19,6 +19,6 @@ int main()
         printf("its an armstrong number");
     }
     else{
-        printf("no no no");
+        printf("it's not a armstong number");
     }
 }
