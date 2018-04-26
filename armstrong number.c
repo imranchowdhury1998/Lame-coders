@@ -6,7 +6,7 @@ int arm(int *a){
   if(*a==0){
     return b*b*b;
   }
- return sum=b*b*b+arm(a);
+ return sum=b*b*b+arm(a); //recursion
 
 }
 int main()
