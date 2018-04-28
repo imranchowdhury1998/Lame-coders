@@ -9,7 +9,7 @@ int main()
             c=0;
         for(j=1;j<=D;j++){
             c+=i*k*j;
-             if(c>=n){
+             if(c>=n){//bug for 24 4 5 100
                  l=j;
                 break;
             }
