@@ -1,30 +1,4 @@
-#include <iostream>
-#include <cstdio>
-#include <vector>
-#include <cstring>
-#include <algorithm>
-#include <cmath>
-#include <sstream>
-#include <map>
-
-using namespace std;
-
-bool prime[32000];
-	void primes(){
-		memset(prime,true,sizeof(prime));
-		prime[0]=false;
-		prime[1]=false;
-		for(int i=2;i<sqrt(32000);i++){
-			if(prime[i]){
-				for(int j=i*i;j<32000;j+=i){
-					prime[j]=false;
-				}
-			}
-		}
-		/*for(int i=2;i<(32000);i++){
-			if(prime[i])cout<<i<<endl;
-		}*/
-	}
+#include<stdio.h>
 int main()
 {
     int pn=1000000000,i,j,n,m,k; //n=total number ,i= initial array index,j=multiplier
