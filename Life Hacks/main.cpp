@@ -29,6 +29,10 @@ int main()
          printf("%c", 177);
     }
    system("cls");
+  int pr = 0;//talha start
+    printf("WELCOME!! This is Life Hacks \n your guide to a better life \n Have you ever thought about how you are gonna go through the month? \n Or at the end of the month have you wondered how you are  in a tight position with such little money? \n How could you have utilized the amount you had? \n well,worry no more! \n Life Hacks will lead you there\n");
+    for(;pr<168;pr++)
+        printf("_"); //talha end
 
    printf("Enter your name: ");
    gets(user.name);
