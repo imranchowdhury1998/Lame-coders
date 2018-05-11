@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1526025599 source:c:\users\user\desktop\life hacks\main.cpp
+	<stdio.h>
+	<conio.h>
+	<process.h>
+	<windows.h>
+	<string.h>
+
