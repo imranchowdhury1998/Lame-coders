@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <conio.h>
-#include <process.h>
+//#include <process.h>
 #include <windows.h>
 #include <string.h>
 struct Info{
