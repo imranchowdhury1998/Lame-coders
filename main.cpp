@@ -35,7 +35,7 @@ void cursor_position(int x,int y){
 
 int main()
 {   char c;
-    int sizee,speeed;
+   /* int sizee,speeed;
     cursor_position(42,12);
     printf("         Life Hacks");
 
@@ -51,7 +51,7 @@ int main()
 
 
 
-   system("cls");
+   system("cls"); */
   int pr = 0;//talha start
     printf("WELCOME!! This is Life Hacks \n your guide to a better life \n Have you ever thought about how you are gonna go through the month? \n Or at the end of the month have you wondered how you are  in a tight position with such little money? \n How could you have utilized the amount you had? \n well,worry no more! \n Life Hacks will lead you there\n");
     for(;pr<168;pr++)
@@ -90,6 +90,8 @@ int scan;/*variable for proceed and exit*/
 
    printf("\nEnter your Id: ");
    scanf("%d",&user.Id);
+   printf("Enter your monthly income:\n");
+    scanf("%f",&user.monthly_income);
      printf("please type your estimated values like following sequence : \n"
              "1.Food\n"
              "2.Electricity Bill\n"
@@ -97,7 +99,7 @@ int scan;/*variable for proceed and exit*/
              "4.Internet bill\n"
              "5.house rent\n");
      for(int a = 0;a<5;a++)
-     {
+     {   printf("%d .",a+1);
          scanf("%f",&user.expenses[a]); //getting the inputs from user
      }
     }
@@ -111,13 +113,17 @@ int scan;/*variable for proceed and exit*/
     user.total = user.array_sum;
 
     printf("your total estimated expense is %f taka\n",user.total);
+    user.house_rent=user.expenses[4];
+user.internet_bill=user.expenses[3];
 
-
-    for(int p = 0;p<5;p++)
+ float real_income = user.monthly_income - user.house_rent - user.internet_bill; /*real income means after paying house rent and net bill the actual amount usable*/
+    for(int p = 0;p<3;p++)
     {
 
-    user.expenses_percentage[p] = (user.expenses[p]*100)/user.total; //perccentage for inputs given stored in an array
+    user.expenses_percentage[p] = (user.expenses[p]*100)/real_income; //perccentage for inputs given stored in an array
     }
+    user.expenses_percentage[3]=(user.expenses[3]*100)/user.total;
+    user.expenses_percentage[4]=(user.expenses[4]*100)/user.total;
 
    system("cls");
 
@@ -152,19 +158,21 @@ int scan;/*variable for proceed and exit*/
      printf("\nLogin Approved");
       printf("\nName: %s",user.nam);
     printf("\nId: %d",user.Id);
-     printf("\nPassword: %s\n\n",user.password);
-    printf("1**food is %f percentage of your total cost\n",user.expenses_percentage[0]);
-    printf("2**electricty is %f percentage of your total cost\n",user.expenses_percentage[1]);
-    printf("3**education is %f percentage of your total cost\n",user.expenses_percentage[2]);
-    printf("4**house rent is fixed and %f of your total cost\n",user.expenses_percentage[3]);
-    printf("5**internet bill is fixed and %f of your total cost\n",user.expenses_percentage[4]);
-    printf("\n\nplease provide your monthly income so we can give you suggestion\n");
-    scanf("%f",&user.monthly_income);
-    float real_income = user.monthly_income - user.house_rent - user.internet_bill; /*real income means after paying house rent and net bill the actual amount usable*/
+    printf("\nPassword: %s\n\n",user.password);
+    printf("1**house rent is fixed and is %.2f of your total cost\n",user.expenses_percentage[3]);
+    printf("2**internet bill is fixed and is %.2f of your total cost\n",user.expenses_percentage[4]);
+    printf("3**The Leftover Money is %.2f \n",real_income);
+    printf("4**food is %f percentage of your total cost\n",user.expenses_percentage[0]);
+    printf("5**electricty is %f percentage of your total cost\n",user.expenses_percentage[1]);
+    printf("6**education is %f percentage of your total cost\n",user.expenses_percentage[2]);
+
+  //  printf("\n\nplease provide your monthly income so we can give you suggestion\n");
+ //   scanf("%f",&user.monthly_income);
+
 
     if(user.total>user.monthly_income && real_income>0)
     {
-        printf("you need to reduce your expenses your real income is %f\n",real_income);
+        printf("you need to reduce your expenses ");
         printf( "i can provide you a plan if you tell me the percentage you want to expend on\n"
                 "Food\n"
                 "Electricity\n"
