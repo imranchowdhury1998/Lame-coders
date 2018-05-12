@@ -1,0 +1,91 @@
+#include <stdio.h>
+
+
+int main()
+{
+    float total,monthly_income;
+    float expenses[5];
+    float array_sum; //it will store the sum of all elements from array expenses
+    float house_rent;
+    float internet_bill;//setting all the variables float for making calculations easier
+    float expenses_percentage[5]; /*array for storing the percentage of total cost of each individual element*/
+    float suggest[3];/*array for suggesting the result not crossing my income limit*/
+    float reduce[3];/*asking from user to give the the percentage of usage after the income limit is crossed*/
+    int scan;/*variable for proceed and exit*/
+    do
+    {
+        printf("please type 1 to proceed and 0 to exit\n"); /*if the user gives wrong value it will repeatedly ask fo zero or one*/
+        scanf("%d",&scan);
+    }
+    while(scan!=1 && scan!=0);
+    if(scan==0)
+    {
+        return 0;
+    }
+    else if(scan==1)
+    {
+     printf("please type your estimated values like following sequence : \n"
+             "1.Food\n"
+             "2.Electricity Bill\n"
+             "3.Education Cost\n"
+             "4.Internet bill\n"
+             "5.house rent\n");
+     for(int a = 0;a<5;a++)
+     {
+         scanf("%f",&expenses[a]); //getting the inputs from user
+     }
+    }
+
+
+        for(int k =0;k<5;k++)
+        {
+            array_sum = array_sum + expenses[k];
+        }
+
+    total = array_sum;
+
+    printf("your total estimated expense is %f taka\n",total);
+
+
+    for(int p = 0;p<5;p++)
+    {
+
+    expenses_percentage[p] = (expenses[p]*100)/total; //perccentage for inputs given stored in an array
+    }
+    printf("food is %f percentage of your total cost\n",expenses_percentage[0]);
+    printf("electricty is %f percentage of your total cost\n",expenses_percentage[1]);
+    printf("education is %f percentage of your total cost\n",expenses_percentage[2]);
+    printf("house rent is fixed and %f of your total cost\n",expenses_percentage[3]);
+    printf("internet bill is fixed and %f of your total cost\n",expenses_percentage[4]);
+    printf("please provide your monthly income so we can give you suggestion\n");
+    scanf("%f",&monthly_income);
+    float real_income = monthly_income - house_rent - internet_bill; /*real income means after paying house rent and net bill the actual amount usable*/
+
+    if(total>monthly_income && real_income>0)
+    {
+        printf("you need to reduce your expenses your real income is %f\n",real_income);
+        printf( "i can provide you a plan if you tell me the percentage you want to expend on\n"
+                "Food\n"
+                "Electricity\n"
+                "Education\n"
+                 "respectively\n");
+        scanf("%f %f %f",&reduce[0],&reduce[1],&reduce[2]);
+        for(int n = 0;n<3;n++)
+        {
+          suggest[n]=(reduce[n]*real_income)/100; /*to make suggestion we will consider only real income*/
+        }
+        printf("you should expend %f taka in food\n",suggest[0]);
+        printf(" you should expend %f taka in electricity\n",suggest[1]);
+        printf("you should expend %f taka in education\n",suggest[2]);
+
+    }
+    else if(real_income<0 || real_income==0) /*this is beacuse if your monthly income is not enough to pay house rent and net bill*/
+    {
+        printf("you should earn more\n");
+    }
+    else if(total<monthly_income)
+    {
+        printf("you are fine to go with your plan goodluck\n");
+    }
+    return 0;
+}
