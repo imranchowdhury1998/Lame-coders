@@ -28,7 +28,10 @@ int main()
         /*telling the user that house rent and net bill is already fixed*/
 
 
-     printf("please type your estimated values in this serial food,electricity,education\n");
+     printf("please type your estimated values like following sequence : \n"
+             "1.Food\n"
+             "2.Electricity Bill\n"
+             "3.Education Cost\n");
      for(int a = 0;a<3;a++)
      {
          scanf("%f",&expenses[a]); //getting the inputs from user
