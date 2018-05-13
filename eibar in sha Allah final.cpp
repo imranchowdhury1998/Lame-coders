@@ -66,7 +66,7 @@ char scan;/*variable for proceed and exit*/
       do
     {
         printf("\nplease press 1 to proceed and 0 to exit\n"); /*if the user gives wrong value it will repeatedly ask fo zero or one*/
-      //  scanf("%c",&scan);
+
       scan=getche();
     }
     while(scan!='1' && scan!='0');
@@ -76,7 +76,7 @@ char scan;/*variable for proceed and exit*/
     }
     else if(scan=='1')
     {
-int j;
+
          printf("\nEnter your name: ");
           scanf(" %[^\n]",&user.nam);
           printf("\nEnter your password: ");
@@ -190,7 +190,7 @@ system("cls");
     user.expenses_percentage[p] = (user.expenses[p]*100)/user.total; //perccentage for inputs given stored in an array
     }
 
-   //system("cls");
+
 
 
    printf("------------------------------------To see results please Login------------------------------------");
@@ -238,21 +238,12 @@ system("cls");
 
 
 
-
-
-//user.house_rent=user.expenses[4];
-//user.internet_bill=user.expenses[3];
-
-
-
-
-
     if(Id==user.Id&&strcmp(a,user.password)==0){
 
      printf("\nLogin Approved");
       printf("\nWelcome! %s",user.nam);
     printf("\nId: %d",user.Id);
-     //printf("\nPassword: %s\n\n",user.password);
+
      printf("\n\nYour total estimated monthly expense is %.2f  taka\n",user.total); //reduced 0
     printf("1->food cost=%.2f tk. It is  %.2f  percent of your total cost\n",user.expenses[0],user.expenses_percentage[0]);
     printf("2->electricty Bill=%.2f tk. It is %.2f percent of your total cost\n",user.expenses[1],user.expenses_percentage[1]);
@@ -260,14 +251,14 @@ system("cls");
     printf("4->house rent=%.2f tk is fixed and is %.2f  of your total cost\n",user.expenses[3],user.expenses_percentage[3]);
     printf("5->internet bill=%.2f tk is fixed and is %.2f  of your total cost\n",user.expenses[4],user.expenses_percentage[4]);
 
-  //system("cls");
+
     float mb,df,lld;
     float final[3];
-    printf("Enter your maximum budget for this month: ");
+    printf("\n\nEnter your maximum budget for this month: ");
     scanf("%f",&mb);
     if( mb<=user.expenses[0] || mb<=user.expenses[1] || mb<=user.expenses[2] || mb<=user.expenses[3] || mb<=user.expenses[4])
     {
-        printf("\nYou should earn more :( \n");
+        printf("\n\nYou should earn more :( \n");
     }
     else if(user.total>mb){
             df=user.total-mb;
@@ -277,7 +268,7 @@ system("cls");
         user.suggest[0]=(df*user.expenses_percentage[0])/lld;
         user.suggest[1]=(df*user.expenses_percentage[1])/lld;
         user.suggest[2]=(df*user.expenses_percentage[2])/lld;
-        printf("\nFood cost %.2f \nElectricity bill %.2f \nTransportation Cost %.2f ",user.suggest[0],user.suggest[1],user.suggest[2]);
+       // printf("\nFood cost %.2f \nElectricity bill %.2f \nTransportation Cost %.2f ",user.suggest[0],user.suggest[1],user.suggest[2]);
         for(int r =0;r<3;r++)
         {
             final[r]= (user.expenses[r]-user.suggest[r])/30;
