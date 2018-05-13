@@ -35,14 +35,15 @@ void cursor_position(int x,int y){
 
 
 int main()
-{   int sizee,speeed;
+{   system("color 3f");
+    int sizee,speeed;
     cursor_position(42,12);
     printf("         Life Hacks");
 
     cursor_position(42,14);
     for(sizee=1;sizee<=30;sizee++){
 
-        for(speeed=0;speeed<=15000000;speeed++){
+        for(speeed=0;speeed<=19000000;speeed++){
 
         }
          printf("%c", 177);
@@ -96,6 +97,7 @@ int j;
                 }
                 else if(c3==13){
                     user.password[i]='\0';
+                    break;
                 }
                 printf("*");
                 user.password[i]=c3;
@@ -130,6 +132,7 @@ int j;
                 }
                 else if(c2==13){
                     user.password_confirm[i]='\0';
+                    break;
                 }
                 printf("*");
                 user.password_confirm[i]=c2;
@@ -217,6 +220,7 @@ system("cls");
                 }
                 else if(c1==13){
                     a[i]='\0';
+                    break;
                 }
                 printf("*");
                 a[i]=c1;
