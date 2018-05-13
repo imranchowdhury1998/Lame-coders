@@ -178,12 +178,12 @@ system("cls");
     else if(user.total>mb){
             df=user.total-mb;
         printf("You need to reduce your budget\n");
-        printf("You need extra %f tk to execute this plan",df);
+        printf("You need extra %f tk to execute this plan\n",df);
         lld=user.expenses_percentage[0]+user.expenses_percentage[1] +user.expenses_percentage[2];
         user.suggest[0]=(df*user.expenses_percentage[0])/lld;
         user.suggest[1]=(df*user.expenses_percentage[1])/lld;
         user.suggest[2]=(df*user.expenses_percentage[2])/lld;
-        printf("food %f elect %f trans %f ",user.suggest[0],user.suggest[1],user.suggest[2]);
+        printf("food %f electricity %f transportation %f \n",user.suggest[0],user.suggest[1],user.suggest[2]);
         for(int r =0;r<3;r++)
         {
             final[r]= (user.expenses[r]-user.suggest[r])/30;
